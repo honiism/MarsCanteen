@@ -1,0 +1,160 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+}
+
+@font-face {
+    font-family: lovelo;
+    src: url(assets/fonts/Lovelo_Black.otf);
+}
+
+@font-face {
+    font-family: helvetica;
+    src: url(assets/fonts/HelveticaWorld-Regular.ttf);
+}
+
+html {
+    font-size: 62.5%; /** Makes it so that 0.1 rem = 1 px **/
+    overflow: hidden;
+}
+
+a {
+    all: unset;
+}
+
+p {
+    cursor: default;
+}
+
+body {
+    margin: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: #FFFCF5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+.hl_maroon {
+    color: #895159;
+}
+
+.hl_blue {
+    color: #5E5E9B;
+}
+
+.size_small {
+    font-size: 3rem;
+}
+
+.logo_area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.logo_img {
+    max-width: 35%;
+    height: auto;
+    z-index: 1;
+}
+
+.web_title {
+    z-index: 1;
+    font-family: "lovelo";
+    font-size: 3.5rem;
+    line-height: 0.8;
+}
+
+.login_title {
+    font-family: "lovelo";
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.fork {
+    position: absolute;
+    z-index: 0;
+    width: 30%;
+    height: auto;
+    margin-left: 21rem;
+    rotate: 30deg;
+}
+
+.login_area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login_bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 10px;
+}
+
+.login_icon {
+    width: 10%;
+    height: auto;
+}
+
+.login_input {
+    background: #F6F2E8;
+    width: 60%;
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    text-align: center;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.4rem;
+    font-family: "helvetica";
+}
+
+.login_button {
+    font-family: "helvetica";
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    font-size: 1.8rem;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 0.2ch;
+    width: 60%;
+    padding: 0.3em;
+    background: #BABDE2;
+    border: none;
+    border-radius: 15px;
+}
+
+.text {
+    font-family: "helvetica";
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #895159;
+}
+
+.text:hover, .login_button:hover {
+    cursor: pointer;
+}
