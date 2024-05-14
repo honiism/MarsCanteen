@@ -21,24 +21,35 @@
             <br>
     
             <div class="login_title"><span class="hl_blue">LOGIN</span> HERE</div>
-            <form action="home.html">
-                <div class="login_area">
-                    <div class="login_bar">
-                        <img src="assets/images/gmail.png" class="login_icon">
-                        <input type="text" class="login_input" placeholder="Email SMA Marsudirini">
-                    </div>
-                    <div class="login_bar">
-                        <img src="assets/images/lock.png" class="login_icon">
-                        <input type="text" class="login_input" placeholder="Kata sandi">
-                    </div>
-                    <input type="submit" class="login_button" value="Login">
-                    <p class="text">Forgot Your Password?</p>
+            
+            <div class="login_area">
+                <div class="login_bar">
+                    <img src="assets/images/gmail.png" class="login_icon">
+                    <input type="text" class="login_input" id="email_input" placeholder="Email SMA Marsudirini" required>
                 </div>
-            </form>
+                <div class="login_bar">
+                    <img src="assets/images/lock.png" class="login_icon">
+                    <input type="password" class="login_input" placeholder="Kata sandi" required>
+                </div>
+                <p class="invalid" id="invalid">Mohon gunakan email SMA Marsudirini!</p>
+                <input type="button" class="login_button" onclick="return checkEmail();" value="Login">
+                <p class="text">Forgot Your Password?</p>
+            </div>
         </div>
     </body>
 
     <script>
-        
+        function checkEmail() {
+            const emailValue = document.getElementById("email_input").value;
+
+            if (!(emailValue.includes("@smamarsudirinibekasi.sch.id"))) {
+                const invalidText = document.getElementById("invalid");
+                
+                invalid.style.display = "block";
+                return;
+            }
+
+            window.location.href = "home.html";
+        }
     </script>
 </html>

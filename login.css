@@ -33,6 +33,10 @@ p {
     cursor: default;
 }
 
+input:focus {
+    outline: none;
+}
+
 body {
     margin: 0;
     min-width: 100vw;
@@ -70,7 +74,7 @@ body {
     top: 90%;
     right: 80%;
     z-index: 0;
-    max-width: 30%;
+    max-width: 40%;
     opacity: 0.1;
 }
 
@@ -136,7 +140,7 @@ body {
 }
 
 .login_icon {
-    width: 10%;
+    max-width: 10%;
     height: auto;
 }
 
@@ -160,7 +164,7 @@ body {
     color: white;
     font-weight: bold;
     letter-spacing: 0.2ch;
-    width: 70%;
+    width: 40%;
     padding: 0.3em;
     background: #BABDE2;
     border: none;
@@ -184,8 +188,25 @@ body {
     color: #502d33;
 }
 
+.invalid {
+    font-family: "helvetica";
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: rgb(112, 40, 40);
+    display: none;
+}
+
 @media only screen and (min-width: 1000px) {
+    .login_icon {
+        max-width: 8%;
+    }
+    
     .bg_img_1, .bg_img_2 {
         top: 60%;
+        max-width: 30%;
+    }
+
+    .invalid {
+        font-size: 1.6rem;
     }
 }

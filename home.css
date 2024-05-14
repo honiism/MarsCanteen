@@ -42,9 +42,6 @@ body {
     min-width: 100vw;
     min-height: 100vh;
     background-color: #F6EFE8;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
 }
 
 ::-webkit-scrollbar {
@@ -60,6 +57,10 @@ body {
     color: #895159;
 }
 
+.hl_salmon {
+    color: #DEAEA1;
+}
+
 .hl_indigo {
     color: #2F2F76;
 }
@@ -72,82 +73,52 @@ body {
     font-size: 3rem;
 }
 
-.header {
-    background-color: #DEAEA1;
+.website {
+    display: grid;
+    grid-template-columns: 8% 72% 20%;
     width: 100vw;
-    height: 18vh;
-    position: relative;
-    z-index: -2;
+    height: 100vh;
 }
 
-.header_bumps {
-    position: absolute;
-    z-index: -1;
+/* TODO: fix sidebar not being in center */
+.sidebar {
     width: 100%;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    text-align: center;
+    align-content: center;
+    top: 0;
+    height: 100vh;
+    background-color: #DEAEA1;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
-.header_bump1 {
-    position: absolute;
-    width: 25%;
+.side_logo {
+    width: 50%;
     height: auto;
-    top: 30%;
-    right: 85%;
+    align-self: center;
 }
 
-.header_bump2 {
-    position: absolute;
-    width: 15%;
-    height: auto;
-    top: 70%;
-    right: 73%;
-}
-
-.header_bump3 {
-    position: absolute;
-    width: 15%;
-    height: auto;
-    top: 60%;
-    right: -8%;
-}
-
-.header_logo, .quotes {
-    position: absolute;
-    z-index: 2;
-    width: 40%;
-    left: 62%;
-}
-
-.quotes {
-    margin: 0.3em;
-    width: 8%;
-    left: 15%;
-}
-
-.header_slogan {
-    font-family: "lovelo";
-    position: absolute;
-    z-index: 1;
-    font-size: 3.0rem;
-    margin-top: 0.5em;
-    left: 25%;
-    font-weight: bold;
-    color: #F6EFE8;
+.content {
+    padding: 3.5em;
+    overflow-y: auto;
 }
 
 .search_bar {
     background-color: white;
-    width: 80%;
-    margin: 3.5em;
-    padding: 1.3rem;
+    width: 100%;
+    padding: 1rem;
     border-radius: 50px;
     display: flex;
     flex-direction: row;
     justify-items: center;
+    margin-bottom: 40px;
 }
 
 .search_logo {
-    width: 5%;
+    width: 3%;
     height: auto;
     margin-right: 10px;
 }
@@ -158,13 +129,142 @@ body {
     font-size: 1.6rem;
 }
 
-.menu_blocks, .menu_block {
+.best_seller_header {
     display: flex;
+    width: 100%;
+    margin-bottom: 70px;
+    margin-top: 50px;
     align-items: center;
-    justify-content: center;
+    gap: 20px;
 }
 
-.food_bg {
-    width: 95%;
-    opacity: 0.6;
+.medal {
+    position: absolute;
+    width: 8%;
+    height: auto;
+    z-index: -1;
+}
+
+.bs_hr {
+    width: 45%;
+    height: 5px;
+    background-color: #895159;
+    border: none;
+    border-radius: 10px;
+}
+
+.best_seller_title {
+    font-family: "lovelo";
+    font-size: 4.5rem;
+    margin-left: 5%;
+    margin-bottom: 2%;
+}
+
+.best_seller_area {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 39%;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.best_seller {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: 100%;
+    border-radius: 30px;
+    align-items: center;
+    text-align: center;
+}
+
+.soto_best_seller {
+    background-color: #F2C37E;
+}
+
+.ma_best_seller {
+    background-color: #D9C4B0;
+}
+
+.ch_best_seller {
+    background-color: #F4B695;
+}
+
+.soto_logo {
+    position: absolute;
+    width: 15%;
+    height: auto;
+    left: 15%;
+    bottom: 70%;
+}
+
+.ma_logo {
+    position: absolute;
+    width: 18%;
+    height: auto;
+    left: 43%;
+    bottom: 73%;
+}
+
+.ch_logo {
+    position: absolute;
+    width: 14%;
+    height: auto;
+    left: 70%;
+    bottom: 73%;
+}
+
+.soto_name, .ma_name, .ch_name {
+    font-family: "lovelo";
+    font-size: 2.5rem;
+    margin-top: 28%;
+    color: #F6EFE8;
+}
+
+.favorites {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.fav_logo {
+    width: 16%;
+}
+
+.fav_num {
+    font-family: "helvetica";
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #2F2F76;
+}
+
+.price {
+    font-family: "helvetica";
+    font-weight: bold;
+    font-size: 1.9rem;
+    margin-top: 25px;
+    color: #895159;
+}
+
+.best_seller:hover {
+    cursor: pointer;
+
+    .bs_name {
+        color: #895159;
+    }
+}
+
+.cart {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    background-color: white;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
