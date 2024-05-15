@@ -387,6 +387,20 @@ body {
     color: #895159;
 }
 
+.cart_button {
+    width: 50%;
+    padding: 0.4em;
+    border: none;
+    border-radius: 20px;
+    background-color: #895159;
+    color: white;
+    font-family: "helvetica";
+    font-size: 1.5rem;
+    cursor: pointer;
+    justify-content: center;
+    margin-top: 5%;
+}
+
 .cart {
     position: sticky;
     top: 0;
