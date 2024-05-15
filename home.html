@@ -9,14 +9,38 @@
     </head>
 
     <body>
-        <div class="website">
-            <div class="sidebar">
-                <img src="assets/images/fork_side.svg" class="side_logo">
+        <div class="website" id="website">
+            <div class="sidebar" id="sidebar" data-con="closed">
+                <div class="side_item">
+                    <img src="assets/images/fork_side.svg" class="side_logo">
+                    <p class="side_title">Home</p>
+                </div>
+                <div class="side_item">
+                    <img src="assets/images/receipt.svg" class="side_logo">
+                    <p class="side_title">History</p>
+                </div>
+                <div class="side_item">
+                    <img src="assets/images/heart_side.svg" class="side_logo">
+                    <p class="side_title">Favorites</p>
+                </div>
+                <div class="side_item">
+                    <img src="assets/images/people.svg" class="side_logo">
+                    <p class="side_title">Contacts</p>
+                </div>
+                <div class="side_end_item">
+                    <a href="login.html">
+                        <img src="assets/images/logout.svg" class="side_logo">
+                    </a>
+                </div>
             </div>
+            
             <div class="content">
-                <div class="search_bar">
-                    <img src="assets/images/search_logo.png" alt="" class="search_logo">
-                    <input type="text" class="search_input" placeholder="Mau Makan Apa Nih?">
+                <div class="content_header">
+                    <img src="assets/images/ham_menu.svg" alt="" class="ham_menu" id="ham_menu">
+                    <div class="search_bar">
+                        <img src="assets/images/search_logo.png" alt="" class="search_logo">
+                        <input type="text" class="search_input" placeholder="Mau Makan Apa Nih?">
+                    </div>
                 </div>
 
                 <div class="best_seller_header">
@@ -38,7 +62,7 @@
 
                     <div class="best_seller ma_best_seller">
                         <img src="assets/images/mie_ayam.png" class="best_seller_logo ma_logo">
-                        <p class="bs_name ma_name">Mie Ayam Mieee Ayam Nyam</p>
+                        <p class="bs_name ma_name">Mie Ayam <br> Mieee Ayam Nyam</p>
                         <div class="favorites">
                             <img src="assets/images/heart.png" class="fav_logo">
                             <p class="fav_num">240</p>
@@ -56,7 +80,28 @@
                         <p class="price">Rp99.999,-</p>
                     </div>
                 </div>
+
+                <div class="all_items_header">
+                    <img src="assets/images/filter.svg" id="filter" class="filter" data-con="all">
+                    <p id="all" class="all_items_title"><span class="hl_indigo">Semua</span><span class="hl_salmon"> Menu</span></p>
+                    <p id="foods" class="foods_items_title"><span class="hl_indigo">Hanya</span><span class="hl_salmon"> Makanan</span></p>
+                    <p id="snacks" class="snacks_items_title"><span class="hl_indigo">Hanya</span><span class="hl_salmon"> Snacks</span></p>
+                    <p id="drinks" class="drinks_items_title"><span class="hl_indigo">Hanya</span><span class="hl_salmon"> Minuman</span></p>
+                </div>
+
+                <div class="menu_grid">
+                    <div class="product">
+                        <img src="assets/images/indomie.png" alt="" class="product_img">
+                        <p class="product_title">Indomie Goreng</p>
+                        <p class="product_price">Rp15.000</p>
+                        <div class="product_rating">
+                            <img src="assets/images/star.svg" alt="" class="rating_img">
+                            <p class="rating_value">5.0</p>
+                        </div>
+                    </div>
+                </div>
             </div>
+
             <div class="cart">
                 
             </div>
@@ -64,6 +109,74 @@
     </body>
 
     <script>
-        
+        function manageFilter() {
+            const filter = document.getElementById("filter");
+
+            filter.addEventListener("click", () => {
+                const filterCon = filter.getAttribute("data-con");
+
+                const all = document.getElementById("all");
+                const foods = document.getElementById("foods");
+                const snacks = document.getElementById("snacks");
+                const drinks = document.getElementById("drinks");
+
+                switch(filterCon) {
+                    case "all":
+                        filter.setAttribute("data-con", "foods");
+                        all.style.display = "none";
+                        foods.style.display = "block";
+                        snacks.style.display = "none";
+                        drinks.style.display = "none";
+                        break;
+                    case "foods":
+                        filter.setAttribute("data-con", "snacks");
+                        all.style.display = "none";
+                        foods.style.display = "none";
+                        snacks.style.display = "block";
+                        drinks.style.display = "none";
+                        break;
+                    case "snacks":
+                        filter.setAttribute("data-con", "drinks");
+                        all.style.display = "none";
+                        foods.style.display = "none";
+                        snacks.style.display = "none";
+                        drinks.style.display = "block";
+                        break;
+                    case "drinks":
+                        filter.setAttribute("data-con", "all");
+                        all.style.display = "block";
+                        foods.style.display = "none";
+                        snacks.style.display = "none";
+                        drinks.style.display = "none";
+                        break;
+                }
+            });
+        }
+
+        function manageSidebar() {
+            const website = document.getElementById("website");
+            const sidebar = document.getElementById("sidebar");
+            const hamMenu = document.getElementById("ham_menu");
+
+            hamMenu.addEventListener("click", () => {
+                const sidebar_con = sidebar.getAttribute("data-con");
+
+                if (sidebar_con == "closed") {
+                    sidebar.setAttribute("data-con", "open");
+                    website.style.gridTemplateColumns = "8% 72% 20%";
+                    sidebar.style.display = "flex";
+                    return;
+                }
+                
+                if (sidebar_con == "open") {
+                    sidebar.setAttribute("data-con", "closed");
+                    website.style.gridTemplateColumns = "80% 20%";
+                    sidebar.style.display = "none";
+                }
+            });
+        }
+
+        manageFilter();
+        manageSidebar();
     </script>
 </html>

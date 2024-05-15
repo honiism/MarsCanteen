@@ -75,15 +75,15 @@ body {
 
 .website {
     display: grid;
-    grid-template-columns: 8% 72% 20%;
+    /* grid-template-columns: 8% 72% 20%; */
+    grid-template-columns: 80% 20%;
     width: 100vw;
     height: 100vh;
 }
 
-/* TODO: fix sidebar not being in center */
 .sidebar {
+    display: none;
     width: 100%;
-    display: flex;
     flex-direction: column;
     position: sticky;
     text-align: center;
@@ -96,14 +96,61 @@ body {
 }
 
 .side_logo {
-    width: 50%;
+    margin-top: 20%;
+    width: 40%;
     height: auto;
     align-self: center;
+}
+
+.side_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.side_end_item {
+    margin-top: auto;
+    margin-bottom: 5px;
+}
+
+.side_item:hover, .side_end_item:hover {
+    cursor: pointer;
+}
+
+.side_item:hover {
+    .side_title {
+        color: #895159;
+    }
+}
+
+.side_title {
+    color: #2F2F76;
+    font-family: "helvetica";
+    font-size: 1.6rem;
+    font-weight: bold;
 }
 
 .content {
     padding: 3.5em;
     overflow-y: auto;
+}
+
+.content_header {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.ham_menu {
+    width: 4%;
+    height: auto;
+}
+
+.ham_menu:hover {
+    cursor: pointer;
 }
 
 .search_bar {
@@ -114,7 +161,6 @@ body {
     display: flex;
     flex-direction: row;
     justify-items: center;
-    margin-bottom: 40px;
 }
 
 .search_logo {
@@ -129,20 +175,30 @@ body {
     font-size: 1.6rem;
 }
 
-.best_seller_header {
+.best_seller_header, .all_items_header {
     display: flex;
     width: 100%;
     margin-bottom: 70px;
     margin-top: 50px;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
+    text-align: center;
+}
+
+.all_items_header {
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 .medal {
-    position: absolute;
-    width: 8%;
+    width: 7%;
     height: auto;
     z-index: -1;
+}
+
+.filter {
+    width: 5%;
+    height: auto;
 }
 
 .bs_hr {
@@ -156,15 +212,25 @@ body {
 .best_seller_title {
     font-family: "lovelo";
     font-size: 4.5rem;
-    margin-left: 5%;
     margin-bottom: 2%;
+}
+
+.all_items_title {
+    font-family: "lovelo";
+    font-size: 3.0rem;
+}
+
+.foods_items_title, .snacks_items_title, .drinks_items_title {
+    font-family: "lovelo";
+    font-size: 3.0rem;
+    display: none;
 }
 
 .best_seller_area {
     position: relative;
     display: flex;
     width: 100%;
-    height: 39%;
+    height: 33%;
     align-items: center;
     justify-content: center;
     gap: 20px;
@@ -173,7 +239,7 @@ body {
 .best_seller {
     display: flex;
     flex-direction: column;
-    width: 25%;
+    width: 20%;
     height: 100%;
     border-radius: 30px;
     align-items: center;
@@ -194,25 +260,25 @@ body {
 
 .soto_logo {
     position: absolute;
-    width: 15%;
+    width: 12%;
     height: auto;
-    left: 15%;
+    left: 23%;
     bottom: 70%;
 }
 
 .ma_logo {
     position: absolute;
-    width: 18%;
+    width: 15%;
     height: auto;
-    left: 43%;
+    left: 44%;
     bottom: 73%;
 }
 
 .ch_logo {
     position: absolute;
-    width: 14%;
+    width: 12%;
     height: auto;
-    left: 70%;
+    left: 65%;
     bottom: 73%;
 }
 
@@ -258,6 +324,67 @@ body {
     .bs_name {
         color: #895159;
     }
+}
+
+.filter:hover {
+    cursor: pointer;
+}
+
+.menu_grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 320px 320px 320px;
+    gap: 10px;
+}
+
+.product {
+    background-color: #FFFCF5;
+    width: 200px;
+    height: 320px;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 0;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.product_img {
+    margin-bottom: 10px;
+}
+
+.product_title {
+    font-family: "lovelo";
+    font-size: 1.8rem;
+    color: #895159;
+}
+
+.product_price {
+    font-family: "helvetica";
+    font-size: 1.6rem;
+}
+
+.product_rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.rating_img {
+    width: 15%;
+    height: auto;
+}
+
+.rating_value {
+    font-family: "helvetica";
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #895159;
 }
 
 .cart {

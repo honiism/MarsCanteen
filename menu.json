@@ -1,0 +1,123 @@
+[
+    {
+        "id": 1,
+        "category": "foods",
+        "name": "Indomie Goreng",
+        "price": "15.000",
+        "rating": "5.0"
+    },
+    {
+        "id": 2,
+        "category": "foods",
+        "name": "Nasi Kuning",
+        "price": "15.000",
+        "rating": "5.0"
+    },
+    {
+        "id": 3,
+        "category": "foods",
+        "name": "Nasi Telor Asin",
+        "price": "15.000",
+        "rating": "5.0"
+    },
+    {
+        "id": 4,
+        "category": "foods",
+        "name": "Ayam Geprek",
+        "price": "15.000",
+        "rating": "5.0"
+    },
+    {
+        "id": 5,
+        "category": "foods",
+        "name": "Ayam Mayo",
+        "price": "15.000",
+        "rating": "5.0"
+    },
+    {
+        "id": 6,
+        "category": "foods",
+        "name": "Mie Ayam",
+        "price": "15.000",
+        "rating": "5.0"
+    },
+    {
+        "id": 7,
+        "category": "foods",
+        "name": "Soto Ayam",
+        "price": "15.000",
+        "rating": "5.0"
+    },
+
+    {
+        "id": 8,
+        "category": "snacks",
+        "name": "Es krim",
+        "price": "15.000",
+        "rating": "5.0"
+    },
+    {
+        "id": 9,
+        "category": "snacks",
+        "name": "Permen",
+        "price": "15.000",
+        "rating": "5.0"
+    },
+    {
+        "id": 10,
+        "category": "snacks",
+        "name": "Gorengan",
+        "price": "15.000",
+        "rating": "5.0"
+    },
+    {
+        "id": 11,
+        "category": "snacks",
+        "name": "Chips",
+        "price": "15.000",
+        "rating": "5.0"
+    },
+    {
+        "id": 12,
+        "category": "snacks",
+        "name": "Wafer",
+        "price": "15.000",
+        "rating": "5.0"
+    },
+
+    {
+        "id": 13,
+        "category": "drinks",
+        "name": "Air Mineral",
+        "price": "15.000",
+        "rating": "5.0"
+    },
+    {
+        "id": 14,
+        "category": "drinks",
+        "name": "Teh",
+        "price": "15.000",
+        "rating": "5.0"
+    },
+    {
+        "id": 15,
+        "category": "drinks",
+        "name": "Susu",
+        "price": "15.000",
+        "rating": "5.0"
+    },
+    {
+        "id": 14,
+        "category": "drinks",
+        "name": "Kopi",
+        "price": "15.000",
+        "rating": "5.0"
+    },
+    {
+        "id": 15,
+        "category": "drinks",
+        "name": "Soda",
+        "price": "15.000",
+        "rating": "5.0"
+    }
+]
