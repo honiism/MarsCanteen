@@ -97,7 +97,7 @@ body {
 
 .side_logo {
     margin-top: 20%;
-    width: 40%;
+    width: 35%;
     height: auto;
     align-self: center;
 }
@@ -335,7 +335,7 @@ body {
     width: 100%;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 320px 320px 320px;
-    gap: 10px;
+    grid-gap: 40px 10px;
 }
 
 .product {
@@ -349,9 +349,12 @@ body {
     display: flex;
     flex-direction: column;
     text-align: center;
+    align-items: center;
 }
 
 .product_img {
+    width: 100%;
+    height: auto;
     margin-bottom: 10px;
 }
 
@@ -398,7 +401,7 @@ body {
     font-size: 1.5rem;
     cursor: pointer;
     justify-content: center;
-    margin-top: 5%;
+    margin-top: 10%;
 }
 
 .cart {
