@@ -8,25 +8,20 @@
         <link rel="icon" href="assets/images/fork.png">
         <link rel="stylesheet" href="home.css">
     </head>
-
     <body>
         <div class="website" id="website">
             <div class="sidebar" id="sidebar" data-con="closed">
                 <div class="side_item">
-                    <img src="assets/images/fork_side.svg" class="side_logo">
-                    <p class="side_title">Home</p>
+                    <a href="home.html">
+                        <img src="assets/images/fork_side.svg" class="side_logo">
+                        <p class="side_title">Home</p>
+                    </a>
                 </div>
                 <div class="side_item">
-                    <img src="assets/images/receipt.svg" class="side_logo">
-                    <p class="side_title">History</p>
-                </div>
-                <div class="side_item">
-                    <img src="assets/images/heart_side.svg" class="side_logo">
-                    <p class="side_title">Favorites</p>
-                </div>
-                <div class="side_item">
-                    <img src="assets/images/people.svg" class="side_logo">
-                    <p class="side_title">Contacts</p>
+                    <a href="aboutUs.html">
+                        <img src="assets/images/people.svg" class="side_logo">
+                        <p class="side_title">About Us</p>
+                    </a>
                 </div>
                 <div class="side_end_item">
                     <a href="login.html">
@@ -44,41 +39,49 @@
                     </div>
                 </div>
 
+                <div class="about_us">
+                    <img src="assets/images/header.jpg" alt="" class="about_img">
+                    <div class="about_details">
+                        <p class="about_title">Welcome To, <span class="hl_indigo">Mars </span><span class="hl_maroon_dark">Canteen</span></p>
+                        <p class="about_desc">Selamat datang di <span class="hl_indigo">Mars Canteen</span> yang mempermudah kamu kalau lagi pengen jajan!</p>
+                    </div>
+                </div>
+
                 <div class="best_seller_header">
-                    <img src="assets/images/medal.png" alt="" class="medal">
-                    <p class="best_seller_title"><span class="hl_indigo">BEST-</span><span class="hl_salmon">SELLER</span> ITEMS</p>
-                    <hr class="bs_hr">
+                    <img src="assets/images/medal.png" alt="" class="header_icon">
+                    <p class="header_title"><span class="hl_indigo">BEST-</span><span class="hl_salmon">SELLER</span> ITEMS</p>
+                    <hr class="header_hr">
                 </div>
 
                 <div class="best_seller_area">
                     <div class="best_seller soto_best_seller">
                         <img src="assets/images/soto.png" class="best_seller_logo soto_logo">
-                        <p class="bs_name soto_name">Soto Ayam Ibu Andini</p>
+                        <p class="bs_name soto_name">Soto Ayam</p>
                         <div class="favorites">
                             <img src="assets/images/heart.png" class="fav_logo">
                             <p class="fav_num">375</p>
                         </div>
-                        <p class="price">Rp99.999,-</p>
+                        <p class="price">Rp15.000,-</p>
                     </div>
 
                     <div class="best_seller ma_best_seller">
                         <img src="assets/images/mie_ayam.png" class="best_seller_logo ma_logo">
-                        <p class="bs_name ma_name">Mie Ayam <br> Mieee Ayam Nyam</p>
+                        <p class="bs_name ma_name">Mie Ayam</p>
                         <div class="favorites">
                             <img src="assets/images/heart.png" class="fav_logo">
                             <p class="fav_num">240</p>
                         </div>
-                        <p class="price">Rp99.999,-</p>
+                        <p class="price">Rp15.000,-</p>
                     </div>
 
                     <div class="best_seller ch_best_seller">
                         <img src="assets/images/chicken.png" class="best_seller_logo ch_logo">
-                        <p class="bs_name ch_name">Ayam Geprekk Nyaam Nyamm</p>
+                        <p class="bs_name ch_name">Ayam Geprek</p>
                         <div class="favorites">
                             <img src="assets/images/heart.png" class="fav_logo">
                             <p class="fav_num">180</p>
                         </div>
-                        <p class="price">Rp99.999,-</p>
+                        <p class="price">Rp15.000,-</p>
                     </div>
                 </div>
 
@@ -99,18 +102,48 @@
                         <div class="product_rating">
                             <img src="assets/images/star.svg" alt="" class="rating_img">
                             <p class="rating_value">5.0</p>
+                            <img src="assets/images/heart.png" alt="" class="fav_img">
                         </div>
                         <div class="cart_button">Beli</div>
                     </div>
                     -->
                 </div>
+
+                <div class="fav_header">
+                    <img src="assets/images/heart.png" alt="" class="header_icon">
+                    <p class="header_title"><span class="hl_indigo">Menu </span><span class="hl_salmon">Favorit</span></p>
+                    <hr class="header_hr">
+                </div>
+
+                <div class="fav_menu_grid" id="fav_menu_grid"></div>
+                <div class="no_fav" id="no_fav">
+                    <img src="assets/images/no_fav.svg" alt="" class="no_fav_img">
+                    <p class="no_fav_p">Tambahkan menu favoritmu disini!</p>
+                </div>
             </div>
 
-            <div class="cart">
-                
+            <div class="cart" id="cart">
+                <div class="cart_header">
+                    <img src="assets/images/cart.svg" alt="" class="cart_header_icon">
+                    <p class="cart_header_title"><span class="hl_indigo">Transaksi</span></p>
+                </div>
+                <hr class="cart_hr">
+                <!--
+                <div class="order">
+                    <img src="assets/images/indomie.png" class="order_icon">
+                    <div class="order_details">
+                        <p class="order_title">Indomie Goreng</p>
+                        <div class="amount">
+                            <img src="assets/images/plus.svg" alt="" class="plus_button">
+                            <p class="items_amount">1</p>
+                            <img src="assets/images/minus.svg" alt="" class="minus_button">
+                        </div>
+                        <p class="order_price">Rp15.000</p>
+                    </div>
+                </div>
+                -->
             </div>
         </div>
     </body>
-
     <script src="home.js"></script>
 </html>
