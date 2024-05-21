@@ -197,10 +197,24 @@ function handleFavMenu() {
 
 function manageCart() {
     const cart = document.getElementById("cart");
+    const cartContentOrder = cart.getElementsByClassName("cart_content_order")[0];
     const cartButtons = Array.from(document.getElementsByClassName("cart_button"));
+    const orderButton = document.getElementById("order_button");
 
     cartButtons.forEach(cartButton => {
         cartButton.addEventListener("click", () => {
+            // Remove no cart & success
+            const emptyCart = document.getElementById("empty_cart");
+            const success = document.getElementById("success_order");
+            
+            if (emptyCart.style.display != "none") {
+                emptyCart.style.display = "none";
+            }
+
+            if (success.style.display != "none") {
+                success.style.display = "none";
+            }
+
             const parentMenu = cartButton.parentElement;
             const newCartItem = document.createElement("div");
             
@@ -231,8 +245,14 @@ function manageCart() {
                     <p class="order_price">${ogOrderPrice}</p>
                 </div>`;
 
-            cart.appendChild(newCartItem);
+           cartContentOrder.appendChild(newCartItem);
 
+            if (orderButton.getAttribute("shown", "false")) {
+                orderButton.setAttribute("shown", "true");
+                orderButton.style.display = "block";
+            }
+
+            // handle quantity
             const menuOrderAmount = newCartItem.getElementsByClassName("items_amount")[0];
             const menuOrderPrice = newCartItem.getElementsByClassName("order_price")[0];
             const add = newCartItem.getElementsByClassName("plus_button")[0];
@@ -249,6 +269,11 @@ function manageCart() {
         
                 orderPrice = orderPrice * orderAmt;
                 menuOrderPrice.innerHTML = `Rp${orderPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}`;
+
+                if (orderButton.getAttribute("shown", "false")) {
+                    orderButton.setAttribute("shown", "true");
+                    orderButton.style.display = "block";
+                }
             });
         
             min.addEventListener("click", () => {
@@ -256,6 +281,21 @@ function manageCart() {
                 
                 if (orderAmt == 0) {
                     newCartItem.remove();
+
+                    const isCartNotEmpty = Array.from(cart.children).find(child => {
+                        return child.classList.contains("order")
+                    });
+
+                    if (!isCartNotEmpty) {
+                        emptyCart.style.display = "flex";
+                        console.log(Array.from(cart.children))
+                    }
+
+                    if (orderButton.getAttribute("shown", "true")) {
+                        orderButton.setAttribute("shown", "false");
+                        orderButton.style.display = "none";
+                    }
+
                     return;
                 }
         
@@ -268,6 +308,24 @@ function manageCart() {
     });
 }
 
+function manageOrderButton() {
+    const orderButton = document.getElementById("order_button");
+    const cartContentOrder = document.getElementsByClassName("cart_content_order")[0];
+    const success = document.getElementById("success_order");
+
+    orderButton.addEventListener("click", () => {
+        Array.from(cartContentOrder.children).forEach(child => {
+            child.remove();
+        });
+
+        orderButton.style.display = "none";
+        orderButton.setAttribute("shown", "false");
+
+        success.style.display = "flex";
+    });
+}
+
 getMenu(handleFavMenu, manageCart);
 manageFilter();
 manageSidebar();
+manageOrderButton();

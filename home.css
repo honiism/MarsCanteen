@@ -425,6 +425,30 @@ body {
     opacity: 0.5;
 }
 
+.empty_cart, .success_order {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    opacity: 0.4;
+}
+
+.empty_cart_p, .success_order_p {
+    font-family: "helvetica";
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2F2F76;
+}
+
+.empty_cart_img, .success_order_img {
+    width: 40%;
+    height: auto;
+}
+
+.success_order {
+    display: none;
+}
+
 .product {
     background-color: #FFFCF5;
     width: 200px;
@@ -513,6 +537,9 @@ body {
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     padding: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .cart_header {
@@ -531,6 +558,27 @@ body {
 .cart_header_title {
     font-family: "lovelo";
     font-size: 3.0rem;
+}
+
+.order_button {
+    position: absolute;
+    background-color: #895159;
+    justify-content: center;
+    padding: 1.5em;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: none;
+
+    bottom: 0;
+    left: 20%;
+}
+
+.order_button > p {
+    font-family: "lovelo";
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
 }
 
 .order {
