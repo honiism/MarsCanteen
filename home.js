@@ -224,7 +224,7 @@ function manageCart() {
 
             let orderAmt = 1;
 
-            const productExists = Array.from(cart.children).find(child => {
+            const productExists = Array.from(cartContentOrder.children).find(child => {
                 return child.getAttribute("data-menu-id") == orderName
             });
 
@@ -259,15 +259,17 @@ function manageCart() {
             const min = newCartItem.getElementsByClassName("minus_button")[0];
 
             let orderPrice = parseInt(ogOrderPrice.replace("Rp", "").replace(".", ""));
+            const permOrderPrice = parseInt(ogOrderPrice.replace("Rp", "").replace(".", ""));
 
             newCartItem.classList.add("order");
             newCartItem.setAttribute("data-menu-id", orderName);
 
             add.addEventListener("click", () => {
-                orderAmt++;
+                orderAmt = orderAmt + 1;
                 menuOrderAmount.innerHTML = orderAmt;
-        
-                orderPrice = orderPrice * orderAmt;
+                
+                orderPrice += permOrderPrice;
+
                 menuOrderPrice.innerHTML = `Rp${orderPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}`;
 
                 if (orderButton.getAttribute("shown", "false")) {
@@ -277,18 +279,17 @@ function manageCart() {
             });
         
             min.addEventListener("click", () => {
-                orderAmt--;
+                orderAmt = orderAmt - 1;
                 
                 if (orderAmt == 0) {
                     newCartItem.remove();
 
-                    const isCartNotEmpty = Array.from(cart.children).find(child => {
+                    const isCartNotEmpty = Array.from(cartContentOrder.children).find(child => {
                         return child.classList.contains("order")
                     });
 
                     if (!isCartNotEmpty) {
                         emptyCart.style.display = "flex";
-                        console.log(Array.from(cart.children))
                     }
 
                     if (orderButton.getAttribute("shown", "true")) {
@@ -300,8 +301,8 @@ function manageCart() {
                 }
         
                 menuOrderAmount.innerHTML = orderAmt;
-        
-                orderPrice = orderPrice / orderAmt;
+                orderPrice -= permOrderPrice;
+
                 menuOrderPrice.innerHTML = `Rp${orderPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}`;
             });
         });
